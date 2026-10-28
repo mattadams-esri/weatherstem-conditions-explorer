@@ -1,0 +1,133 @@
+{
+  "version": "0.3",
+  "kind": "app",
+  "generatedAt": "2026-10-28T15:14:24.445Z",
+  "item": {
+    "title": "WeatherSTEM Conditions Explorer",
+    "subtitle": "Current and 1-week station conditions"
+  },
+  "map": {
+    "type": "webmap",
+    "path": "./map.json"
+  },
+  "app": {
+    "template": "nova-app",
+    "preset": "analysis",
+    "showHeader": true,
+    "theme": {
+      "mode": "dark",
+      "accent": "coral"
+    },
+    "layout": {
+      "right": {
+        "hidden": false,
+        "width": "460px",
+        "title": "Station weather",
+        "collapsed": false,
+        "blocks": [
+          {
+            "type": "customMount",
+            "id": "station-panel",
+            "title": "Selected station"
+          }
+        ]
+      }
+    },
+    "widgets": [
+      {
+        "id": "legend",
+        "type": "legend",
+        "slot": "bottom-left",
+        "title": "Legend",
+        "config": {}
+      },
+      {
+        "id": "layer-list",
+        "type": "layerList",
+        "slot": "top-right",
+        "title": "Layers",
+        "config": {}
+      },
+      {
+        "id": "default-basemap-gallery",
+        "type": "basemapGallery",
+        "slot": "top-right",
+        "config": {}
+      }
+    ],
+    "interactions": [],
+    "behaviors": [
+      {
+        "id": "station-weather-explorer",
+        "label": "Station current conditions and historical charts",
+        "bundlePath": "./runtime/behaviors/station-weather-explorer-9dc2d4bf8e3613f9.js",
+        "sourceSha256": "9dc2d4bf8e3613f96af1a9428ea17ff57769452ad8859fcea56546ef33a66138",
+        "modulePaths": [],
+        "config": {
+          "latestLayerId": "1a183169700-layer-54",
+          "historyLayerId": "1a183169c21-layer-55",
+          "fields": {
+            "name": "name",
+            "domain": "domain",
+            "time": "time",
+            "temperature": "temperature",
+            "heatIndex": "heat_index",
+            "humidity": "humidity",
+            "dewpoint": "dewpoint",
+            "conditions": "conditions",
+            "windSpeed": "wind_speed",
+            "windGust": "wind_gust",
+            "windDirection": "wind_direction_cardinal",
+            "dailyRainfall": "daily_rainfall",
+            "rainRate": "rain_rate",
+            "pressure": "pressure",
+            "uv": "uv"
+          }
+        },
+        "mounts": [
+          "station-panel"
+        ],
+        "ownedLayerIds": [],
+        "interactions": [
+          {
+            "id": "latest-station-map-click",
+            "trigger": {
+              "type": "map-click"
+            },
+            "actionId": "handle-station-map-click"
+          }
+        ],
+        "installedAt": "2026-10-28T15:37:26.775Z"
+      },
+      {
+        "id": "clear-selection-button",
+        "label": "Clear map selection button",
+        "bundlePath": "./runtime/behaviors/clear-selection-button-b0c52534a58570dc.js",
+        "sourceSha256": "b0c52534a58570dca5d7b6614411300bf07b06958c2cdb9f03cd63fd2f96ceb3",
+        "modulePaths": [],
+        "config": {},
+        "mounts": [],
+        "ownedLayerIds": [],
+        "interactions": [],
+        "installedAt": "2026-10-28T15:37:36.391Z"
+      }
+    ]
+  },
+  "nova": {
+    "basename": "f0ba5774-2c6f-4e92-90aa-58a747421c06",
+    "presentationMode": "app",
+    "ownedGraphicsLayerIds": [],
+    "origin": {
+      "portalUrl": "https://www.arcgis.com",
+      "mapId": "output-0c0f0642-ae8b-44a3-910c-0f1e703b0d61",
+      "mapName": "New Conversation",
+      "viewMode": "2d",
+      "capturedAt": "2026-10-28T15:14:24.441Z"
+    },
+    "sourceSelection": {
+      "mode": "all"
+    },
+    "unsupportedLayers": [],
+    "degradedFeatures": []
+  }
+}
